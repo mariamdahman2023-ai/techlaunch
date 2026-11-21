@@ -1,0 +1,88 @@
+/* إعدادات عامة */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; background: #0f172a; color: white; line-height: 1.6; }
+
+/* TODO 1: شريط تنقل ثابت باستخدام Flexbox */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1e293b;
+  padding: 15px 40px;
+  z-index: 1000;
+}
+.logo { font-size: 24px; font-weight: bold; }
+.nav-links { display: flex; gap: 25px; }
+.nav-links a { color: white; text-decoration: none; }
+
+/* TODO 2: القسم الرئيسي Hero */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  background: #1e293b;
+  padding: 80px 20px 20px;
+}
+.hero h1 { font-size: 48px; margin-bottom: 15px; }
+.hero p { max-width: 600px; margin: 0 auto 20px; color: #cbd5e1; }
+.hero button {
+  background: #22c55e; color: white; border: none;
+  padding: 12px 25px; border-radius: 8px; cursor: pointer; margin: 5px;
+}
+.hero .secondary { background: transparent; border: 1px solid white; }
+
+/* TODO 3: قسم المميزات - شبكة من 3 أعمدة */
+.features { padding: 60px 40px; text-align: center; }
+.features h2 { font-size: 32px; margin-bottom: 10px; }
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+}
+.feature-card {
+  background: #1e293b; padding: 30px; border-radius: 12px;
+}
+.feature-card span { font-size: 35px; }
+.feature-card h3 { margin: 15px 0 10px; }
+
+/* TODO 4: آراء العملاء - صف Flexbox */
+.testimonials { padding: 60px 40px; text-align: center; background: #020617; }
+.testimonials-flex {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+.testimonial-card {
+  background: #1e293b; padding: 25px; border-radius: 12px;
+  flex: 1; min-width: 250px; max-width: 350px;
+}
+.testimonial-card img { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; }
+.testimonial-card p { margin: 15px 0; }
+.testimonial-card h4 { color: #22c55e; font-size: 14px; }
+
+/* TODO 5: التذييل - شبكة من 3 أعمدة */
+.footer { background: #020617; padding: 50px 40px 20px; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.footer ul { list-style: none; }
+.footer a { color: #cbd5e1; text-decoration: none; }
+.footer h3 { margin-bottom: 15px; color: #22c55e; }
+.copyright { text-align: center; margin-top: 40px; color: #94a3b8; }
+
+/* تجاوب مع الجوال */
+@media (max-width: 768px) {
+  .features-grid, .footer-grid { grid-template-columns: 1fr; }
+  .navbar { flex-direction: column; gap: 10px; }
+  .hero h1 { font-size: 32px; }
+}
